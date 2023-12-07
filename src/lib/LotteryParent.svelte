@@ -1,22 +1,29 @@
 <script>
+  import { generatePrizeArray } from "../helper";
   import Participants from "./Participants.svelte";
   import Prizes from "./Prizes.svelte";
+  import Results from "./Results.svelte";
 
-  let results = {};
+  let winners = [];
   let nb_of_prizes = 4;
+  let nb_of_participants = 4;
 
-  $: {
-    console.log(nb_of_prizes);
-  }
+  // $: {
+  //   console.log(nb_of_prizes);
+  //   console.log(nb_of_participants);
+  // }
 
   function generateResults(event) {
-    console.log(nb_of_prizes);
+    const winners = generatePrizeArray(nb_of_prizes, nb_of_participants);
+    console.log(winners);
   }
 
   function handleUpdatePrizes(event) {
-    console.log(event.detail);
-
     nb_of_prizes = event.detail.nb_of_prizes;
+  }
+
+  function handleUpdateParticipants(event) {
+    nb_of_participants = event.detail.nb_of_participants;
   }
 </script>
 
@@ -26,10 +33,15 @@
     {nb_of_prizes}
   </div>
   <div class="lottery-block">
-    <Participants nb_of_participants={1} />
+    <Participants
+      {nb_of_participants}
+      on:updateParticipants={handleUpdateParticipants}
+    />
+    {nb_of_participants}
   </div>
 </div>
-<input type="button" value="Generer" on:click|once={generateResults} />
+<input type="button" value="Let's go !" on:click|once={generateResults} />
+<Results {winners} />
 
 <style>
   .lottery-wrapper {
