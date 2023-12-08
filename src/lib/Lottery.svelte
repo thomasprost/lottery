@@ -6,7 +6,7 @@
 
   let winners = [];
   let nb_of_prizes = 4;
-  let nb_of_participants = 4;
+  let nb_of_participants = 30;
 
   // $: {
   //   console.log(nb_of_prizes);
@@ -14,7 +14,7 @@
   // }
 
   function generateResults(event) {
-    const winners = generatePrizeArray(nb_of_prizes, nb_of_participants);
+    winners = [...generatePrizeArray(nb_of_prizes, nb_of_participants)];
     console.log(winners);
   }
 
@@ -30,18 +30,16 @@
 <div class="lottery-wrapper">
   <div class="lottery-block">
     <Prizes {nb_of_prizes} on:updatePrizes={handleUpdatePrizes} />
-    {nb_of_prizes}
   </div>
   <div class="lottery-block">
     <Participants
       {nb_of_participants}
       on:updateParticipants={handleUpdateParticipants}
     />
-    {nb_of_participants}
   </div>
 </div>
-<input type="button" value="Let's go !" on:click|once={generateResults} />
-<Results {winners} />
+<input type="button" value="Let's go !" on:click={generateResults} />
+<Results bind:winners />
 
 <style>
   .lottery-wrapper {

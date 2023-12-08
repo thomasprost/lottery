@@ -9,6 +9,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --lottery-red : #EF233C;
+  --lottery-green : #386641;
 }
 
 a {
@@ -31,6 +34,7 @@ body {
 h1 {
   font-size: 3.2rem;
   line-height: 1.1;
+  color: var(--lottery-red);
 }
 
 
@@ -53,13 +57,24 @@ input[type="button"] {
   font-size: 1.2rem;
   font-weight: 500;
   font-family: inherit;
-  background-color: #ef5e58;
+  background-color: var(--lottery-red);
   color: rgba(255,255,255, .9);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background-color 0.25s ease-out;
 
   &:hover{
-    background-color: #f12c25;
+    background-color: var(--lottery-green);
   }
+}
+
+input[type="number"]{
+  padding: 6px 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+input[type="range"]{
+  accent-color: #ff5a7e;
+  margin-bottom: 10px;
 }
 

@@ -11,15 +11,15 @@
 </script>
 
 <div>
-  <p>Veuillez selectionner le nombre de lots a gagner</p>
-  <label>
+  <h2>{nb_of_prizes} lots à gagner</h2>
+  <div class="lottery-counter">
     <input
       type="number"
       bind:value={nb_of_prizes}
       on:change={changeNbOfPrizes}
       min="1"
       max="500"
-    /><br />
+    />
     <input
       type="range"
       bind:value={nb_of_prizes}
@@ -27,6 +27,16 @@
       min="1"
       max="500"
     />
-  </label>
-  {nb_of_prizes}
+  </div>
 </div>
+
+<style>
+  .lottery-counter {
+    display: flex;
+    align-items: center;
+  }
+
+  input[type="number"] {
+    margin-right: 20px;
+  }
+</style>

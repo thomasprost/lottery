@@ -12,7 +12,7 @@
 </script>
 
 <div>
-  <p>Veuillez sélectionner le nombre de participants à cette loterie</p>
+  <h2>{nb_of_participants} participants à la loterie</h2>
   <label>
     <input
       type="number"

@@ -1,9 +1,9 @@
 <script>
   import TextIntro from "./lib/Intro.svelte";
-  import LotteryParent from "./lib/LotteryParent.svelte";
+  import Lottery from "./lib/Lottery.svelte";
 </script>
 
 <main>
   <TextIntro />
-  <LotteryParent />
+  <Lottery />
 </main>
