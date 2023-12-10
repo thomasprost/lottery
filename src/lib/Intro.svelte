@@ -5,8 +5,8 @@
 <img src={prizes} alt="Prizes" />
 <h1>Loterie</h1>
 <p>
-  Ce petit script a pour but de generer la liste des gagnants a une loterie en
-  definissant d'abord le nombres de lots puis le nombre de participants.
+  Ce petit script a pour but de générer la liste des gagnants à une loterie en
+  définissant le nombre de lots puis le nombre de participants.
 </p>
 
 <style>

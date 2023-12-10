@@ -8,14 +8,8 @@
   let nb_of_prizes = 4;
   let nb_of_participants = 30;
 
-  // $: {
-  //   console.log(nb_of_prizes);
-  //   console.log(nb_of_participants);
-  // }
-
   function generateResults(event) {
     winners = [...generatePrizeArray(nb_of_prizes, nb_of_participants)];
-    console.log(winners);
   }
 
   function handleUpdatePrizes(event) {
@@ -38,7 +32,7 @@
     />
   </div>
 </div>
-<input type="button" value="Let's go !" on:click={generateResults} />
+<input type="button" value="Let's go !" on:click|once={generateResults} />
 <Results bind:winners />
 
 <style>
@@ -56,6 +50,4 @@
       margin: 30px 0;
     }
   }
-
-  /* @media  */
 </style>
