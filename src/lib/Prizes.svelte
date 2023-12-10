@@ -31,12 +31,4 @@
 </div>
 
 <style>
-  .lottery-counter {
-    display: flex;
-    align-items: center;
-  }
-
-  input[type="number"] {
-    margin-right: 20px;
-  }
 </style>

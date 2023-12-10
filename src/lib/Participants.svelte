@@ -13,7 +13,7 @@
 
 <div>
   <h2>{nb_of_participants} participants à la loterie</h2>
-  <label>
+  <div class="lottery-counter">
     <input
       type="number"
       on:change={changeNbOfParticipants}
@@ -28,5 +28,5 @@
       min="1"
       max="500"
     />
-  </label>
+  </div>
 </div>

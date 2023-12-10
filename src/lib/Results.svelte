@@ -14,7 +14,14 @@
 </div>
 
 <style>
+  #results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   ul {
+    max-width: 350px;
+    padding-left: 0;
   }
 
   li {
@@ -22,12 +29,13 @@
     margin-bottom: 30px;
     display: flex;
     gap: 20px;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
   }
 
   span {
     padding: 10px;
+    min-width: 100px;
     color: white;
   }
 
