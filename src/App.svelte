@@ -4,7 +4,7 @@
   import Lottery from "./lib/Lottery.svelte";
 </script>
 
-<main>
+<main id="app">
   <TextIntro />
   <Lottery />
   <Footer />

@@ -44,7 +44,14 @@
     width: 50%;
   }
 
-  @media screen and (max-width: 780px) {
+  /* @media screen and (max-width: 780px) {
+    .lottery-block {
+      width: 100%;
+      margin: 30px 0;
+    }
+  } */
+
+  @container lottery (width < 780px) {
     .lottery-block {
       width: 100%;
       margin: 30px 0;
