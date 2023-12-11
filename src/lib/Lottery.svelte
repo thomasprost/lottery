@@ -51,7 +51,7 @@
     }
   } */
 
-  @container lottery (width < 780px) {
+  @container lottery (width < 800px) {
     .lottery-block {
       width: 100%;
       margin: 30px 0;
