@@ -1,15 +1,34 @@
 <script>
+  import domtoimage from "dom-to-image";
   export let winners = [];
+
+  function generateScreenshot(event) {
+    const node = document.getElementById("results");
+    domtoimage
+      .toPng(node)
+      .then(function (dataUrl) {
+        var img = new Image();
+        img.src = dataUrl;
+        // console.log(img);
+        window.open(dataUrl);
+
+        // document.body.appendChild(img);
+      })
+      .catch(function (error) {
+        console.error("oops, something went wrong!", error);
+      });
+  }
 </script>
 
 <div id="results">
-  {#if winners}
+  {#if winners && winners.length > 0}
     <h3>Listes des vainqueurs de la loterie</h3>
     <ul>
       {#each winners as winner, index (winner)}
         <li><span>Prix {index + 1} </span> Participant {winner}</li>
       {/each}
     </ul>
+    <input type="button" value="Screenshot" on:click={generateScreenshot} />
   {/if}
 </div>
 
