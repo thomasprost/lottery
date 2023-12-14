@@ -9,10 +9,7 @@
       .then(function (dataUrl) {
         var img = new Image();
         img.src = dataUrl;
-        // console.log(img);
         window.open(dataUrl);
-
-        // document.body.appendChild(img);
       })
       .catch(function (error) {
         console.error("oops, something went wrong!", error);
